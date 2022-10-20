@@ -1,0 +1,19 @@
+//variables
+$html-font-size: 16px;
+
+//breakpoints
+$screen-mobile-portrait: 478px;
+$screen-mobile-landscape-min: ($screen-mobile-portrait + 1); //479px
+$screen-mobile-landscape-max: 767px;
+$screen-tablet-min: ($screen-mobile-landscape-max + 1); //768px
+$screen-tablet-max: 991px;
+$screen-desktop: ($screen-tablet-max + 1); //992px
+
+//calculate px to rems
+@function stripUnit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@function rem($pxValue) {
+    @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}

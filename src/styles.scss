@@ -1,0 +1,77 @@
+@import './settings.scss';
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: $html-font-size;
+    line-height: 1.2;
+    display: block;
+    font-weight: 400;
+    box-sizing: inherit;
+}
+
+h1 {
+    font-size: rem(25);
+    padding: rem(20);
+    font-weight: 500;
+
+    @media (min-width: $screen-desktop) {
+        padding: rem(25);
+    }
+}
+
+h2 {
+    font-size: rem(22);
+    margin: rem(5) 0;
+    font-weight: 500;
+
+    &:before {
+        content: url('./assets/clock-regular.svg');
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        text-decoration: inherit;
+        position: absolute;
+        margin-left: rem(-40);
+        width: 30px;
+    }
+
+    &.night:before {
+        content: url('./assets/clock-solid.svg');
+    }
+}
+
+p {
+    margin: rem(5) 0;
+    font-weight: 200;
+    font-size: rem(18);
+
+    &:last-child {
+        margin: rem(10) 0;
+        font-weight: 400;
+    }
+}
+
+.grid {
+
+    &-container {
+        display: grid;
+        justify-content: space-evenly;
+        grid-template-columns: max-content;
+        max-width: 1000px;
+        margin: 0 auto;
+
+        @media (min-width: $screen-mobile-landscape-min) and (max-width: $screen-mobile-landscape-max) {
+            grid-template-columns: auto auto;
+        }
+
+        @media (min-width: $screen-tablet-min) {
+            grid-template-columns: auto auto auto;
+        }
+    }
+
+    &-item {
+        margin-bottom: rem(20);
+    }
+}
